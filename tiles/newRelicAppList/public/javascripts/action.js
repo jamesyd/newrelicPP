@@ -47,15 +47,20 @@ function initialize(config, options, host) {
 
     var items = [];
         items.push('<thead><tr><th>Response Time</th><th>Throughput</th><th>Error Rate</th><th>APDEX</th></thead>');
-        items.push('<tbody><tr><td>'+config.rt+
-                   '</td><td>'+config.tp+
-                   '</td><td>'+config.er+
-                   '</td><td>'+config.apdex+
-                   '</td></tr></tbody>');
-
-
-    $("#issue-table .table").append(items.join(''));
-    $("#issue-table").show();
+        items.push('<tr"><td bgcolor="#00FF00">'+config.rt+
+                   '</td><td bgcolor="#FF0000">'+config.tp+
+                   '</td><td bgcolor="gold">'+config.er+
+                   '</td><td style="color: #0000FF"> ' +config.apdex +
+                   '</td></tr>');
+    var colors = ["grey", "green", "gold", "red"];
+    $('#metrics').append('<thead><tr><th>Response Time</th><th>Throughput</th><th>Error Rate</th><th>APDEX</th></thead>');
+    $('#metrics').append('<tr><td style="color: ' + colors[config.rt_thres] + '">'+config.rt+
+         '</td><td style="color: ' + colors[config.tp_thres] + '">'+config.tp+
+         '</td><td style="color: ' + colors[config.er_thres] + '">'+config.er+
+         '</td><td style="color: ' + colors[config.apdex_thres] + '">'+config.apdex+
+         '</td></tr>');
+    //$("#issue-table .table").append(items.join(''));
+   // $("#issue-table").show();
 
     //desc = "RT=" + config.rt + " TP=" + config.tp +
     //       " Error %=" + config.er  + " Apdex="   + config.apdex ;

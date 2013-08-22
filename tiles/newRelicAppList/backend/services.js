@@ -52,7 +52,11 @@ function processTileInstance(instance) {
                                              rt : data[field].rt.formatted_metric_value,
                                              apdex : data[field].apdex.formatted_metric_value,
                                              tp : data[field].tp.formatted_metric_value,
-                                             er : data[field].er.formatted_metric_value
+                                             er : data[field].er.formatted_metric_value,
+                                             rt_thres : data[field].rt.threshold_value,
+                                            apdex_thres : data[field].apdex.threshold_value,
+                                            tp_thres : data[field].tp.threshold_value,
+                                            er_thres : data[field].er.threshold_value
                                         }
                                 }
                  }
