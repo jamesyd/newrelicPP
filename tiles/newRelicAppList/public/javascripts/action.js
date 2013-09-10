@@ -132,7 +132,7 @@ function initialize(config, options, host) {
             obj["parent"] = parent;
         }
         osapi.jive.corev3.discussions.create(obj).execute(function(result) {
-            debugger;
+            //debugger;
             console.log("result:", result);
         });
         $("#message").val('');
